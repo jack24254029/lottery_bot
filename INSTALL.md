@@ -11,6 +11,7 @@
 - [申請 Line Messaging API](#申請-line-messaging-api)
 - [建立 Google Sheet](#建立-google-sheet)
 - [建立 Google Apps Script](#建立-google-apps-script)
+- [建立 GCP 專案 (非必要)](#建立-gcp-專案)
 
 # 申請 Line Messaging API
 
@@ -136,15 +137,15 @@
   
     > 這個專案是使用在特定的 Line 群組上面，在正常的使用情況下，API 的使用數量是不會超過免費的額度
     
-    <img src="https://user-images.githubusercontent.com/13265628/148414286-da1e7d27-9c8d-48a2-ac3c-85a640ee3e74.png" width="800" />
+    <img src="https://user-images.githubusercontent.com/13265628/148414286-da1e7d27-9c8d-48a2-ac3c-85a640ee3e74.png" width="600" />
     
-    <img src="https://user-images.githubusercontent.com/13265628/148414790-ac168c43-3cc8-4ac0-9560-9d502bae24de.png" width="800" />
+    <img src="https://user-images.githubusercontent.com/13265628/148414790-ac168c43-3cc8-4ac0-9560-9d502bae24de.png" width="600" />
 
   - 點進去剛剛建立好的 API Key，複製第一個 API Key
   
     > 這邊的 API Key 嚴禁透露給任何人
 
-    <img src="https://user-images.githubusercontent.com/13265628/148415512-0468203a-7ec7-4943-b263-6527fe3b983e.png" width="800" />
+    <img src="https://user-images.githubusercontent.com/13265628/148415512-0468203a-7ec7-4943-b263-6527fe3b983e.png" width="600" />
 
   - 到這裡就完成申請了。
 
@@ -189,7 +190,7 @@
 - 接著把機器人加到 Line 群組裡面，隨便輸入一句話讓機器人已讀，藉此來取得這個群組的 Group ID
 - 以上步驟如果都正確的話，就會在 Log 的工作表看到 Log 了，裡面就可以找到 `groupId`，並把他填到 `Configs.gs` 裡面的 `TARGET_GROUP_ID`
   
-  <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="80" />
+  <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="800" />
   
 - 完成之後，再去 `Main.gs` 把第 21 行刪掉
 
@@ -200,3 +201,46 @@
   <img src="https://user-images.githubusercontent.com/13265628/148422302-359f98b4-44da-48c9-b650-2a4ea8017f3c.png" width="800" />
 
 - 非常非常恭喜你，你已經可以使用相關指令跟抽獎機器人互動了
+
+
+# 建立 GCP 專案
+
+此步驟是發生在不知道為什麼機器人都無法作動的情況下才需要實作的
+
+- 先打開 https://console.cloud.google.com/ 網站
+- 新增一個專案，專案名稱隨意
+- 建立完成後，選取該專案
+
+  <img src="https://user-images.githubusercontent.com/13265628/148424582-8ffbc70d-a276-4272-9a28-ec315f25df9b.png" width="500" />
+
+- 點選左上的選單 -> `API 和服務` -> `OAuth 同意畫面`
+
+  <img src="https://user-images.githubusercontent.com/13265628/148424664-2461c23c-2a67-4ccd-8985-7fa1a5165fe9.png" height="500" />
+
+- 選擇 `外部`
+
+  <img src="https://user-images.githubusercontent.com/13265628/148424810-1a125b14-c4c4-41ef-9050-ca7486a0d9e4.png" height="500" />
+  
+- 把必填的填一填， Email 的地方都填自己的，填完後，最下面點選 `儲存並繼續`
+- 繼續點選 `儲存並繼續`
+- 測試使用者加入自己的 Email，填完後，點選 `儲存並繼續`
+- 完成後，點選左上的選單 -> 首頁 -> 資訊主頁，複製專案編號
+- 打開先前發布的 Apps Script
+- 左邊選單 `專案設定` -> 拉到最下面 -> 點選 `變更專案` -> 填上剛剛複製的專案編號
+
+  <img src="https://user-images.githubusercontent.com/13265628/148425489-b939eab5-aacd-4cbf-9dd6-8b134600ac4d.png" height="300" />
+  
+  <img src="https://user-images.githubusercontent.com/13265628/148425610-3bd854f7-6bf6-4019-adc6-6168a4da9a35.png" width="800" />
+  
+- 重新部署專案，會需要重新授權一次
+- 回到 GCP 網頁，上方搜尋 `logging`
+
+  <img src="https://user-images.githubusercontent.com/13265628/148425760-ca8a1cef-70d5-4ed7-93bf-87a64613a2df.png" width="800" />
+
+- 點開 `紀錄檔欄位`，選 `Apps Script Function`，再去跟機器人互動，執行查詢一直刷新，過幾秒後，就會看到顯示在 Google 試算表的 Log 也顯示在上面了
+  
+  > 如果要顯示自訂義的 Log 請到程式碼需要加上 Log 的地方加上 `conoloe.log('你需要的資訊');` 即可
+  
+  <img src="https://user-images.githubusercontent.com/13265628/148426261-615255e4-9aa8-45bb-a266-85d1808ae0db.png" height="300" />
+
+  <img src="https://user-images.githubusercontent.com/13265628/148427606-e645b5c4-c630-427a-85ce-b5152c0ec579.png" width="800" />

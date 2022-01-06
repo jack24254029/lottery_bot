@@ -18,6 +18,7 @@ var replyMessage = '';
  */
 
 function doPost(e) {
+  log(e.postData.contents);
   const msg = JSON.parse(e.postData.contents);
   const type = msg.events[0].message.type;
   if (type != 'text') {

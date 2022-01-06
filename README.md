@@ -26,5 +26,6 @@
   
   `/help`
   
-  ## 如何架設 Line 機器人
-  [架設文件](INSTALL.md)
+## 如何架設 Line 機器人
+
+[架設文件](INSTALL.md)

@@ -6,7 +6,7 @@
 - Google Sheet API
 - Google Cloud Platform (除錯才會使用到)
 
-## 目錄
+# 目錄
 
 - [申請 Line Messaging API](#申請-line-messaging-api)
 

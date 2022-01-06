@@ -9,6 +9,7 @@
 # 目錄
 
 - [申請 Line Messaging API](#申請-line-messaging-api)
+- [建立 Google Sheet](#建立-google-sheet)
 
 # 申請 Line Messaging API
 
@@ -54,4 +55,26 @@
 - 在相同的頁面往上拉，會看到一個 QR code，用 Line 掃描這個 QR code 就可以加入這個機器人到你的好友跟群組裡面了
 - 恭喜你，你的 Line 機器人設定已經完成 99% 了。
 
+# 建立 Google Sheet
+這個階段，我們會用自己的 Google Drive 建立一個 Google Sheet ，也就是 Google 的 Excel
+這個 Sheet 是要用來記錄要抽什麼、誰登記要抽什麼，也就是當作一個小型資料庫使用
+
+- 打開 Google Drive
   
+  > https://drive.google.com/drive/my-drive
+
+- 新增 -> Google 試算表
+  
+  > 你可以幫試算表取個明字，可以避免之後清理 Google Drive 的時候誤刪
+
+- 新增一個工作表，叫 `Log`
+
+  > 這個工作表可以用來記錄一些 Debug 用的資訊，後續會在這邊取得 Line 群組的 ID
+
+- 這邊有一個東西非常重要，叫做 `SheetID` ，他就在網址列上面，後續會使用到
+
+  > `https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit#gid=0`
+  
+  <img src="https://user-images.githubusercontent.com/13265628/148408332-dcbf6e41-816e-4af6-879b-c03677328e38.png" width="800" />
+
+- 再度恭喜你，到這邊大致上已經完成建立 Google Sheet 的流程了。

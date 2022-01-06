@@ -87,8 +87,8 @@ function getListOfColumn(columnIndex) {
 function createSheet() {
   const sheet = getSheet();
   if (sheet != null) {
-    spreadSheet.deleteSheet(sheet);
+    SpreadsheetApp.openById(SHEET_ID).deleteSheet(sheet);
   }
-  const newSheet = spreadSheet.insertSheet();
+  const newSheet = SpreadsheetApp.openById(SHEET_ID).insertSheet();
   newSheet.setName(sheetName);
 }

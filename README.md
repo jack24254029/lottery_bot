@@ -4,9 +4,9 @@
 
 ## 展示圖
 
-<img src="https://user-images.githubusercontent.com/13265628/148397260-3b6cba0c-f5e8-44dc-98ca-54002d3933cc.jpg" width="300" />
+<img src="https://user-images.githubusercontent.com/13265628/148482372-f7583539-a94d-4eaf-8b90-86b8e82ff6aa.png" width="300" />
 
-<img src="https://user-images.githubusercontent.com/13265628/148397277-d15e3f94-be87-4c80-9952-6941641fff6e.jpg" width="300" />
+<img src="https://user-images.githubusercontent.com/13265628/148482385-e47f7be6-f56e-4178-974a-6f2055eab114.png" width="300" />
 
 ## 機器人指令
 

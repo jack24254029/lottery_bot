@@ -1,6 +1,7 @@
 # 架設教學
 
-架設過程中會使用到以下服務
+架設過程中會使用到以下服務，過程中無須安裝任何軟體，只需要有網路就可以實作
+
 - Line Messaging API
 - Google Apps Script
 - Google Sheet API

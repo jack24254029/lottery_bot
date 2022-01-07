@@ -111,13 +111,13 @@
   - Configs.gs
   - Main.gs
   - SheetUtils.gs
-  - Utils.gs)
+  - Utils.gs
 
   > 如何修改檔名 (可以不用打 `.gs`)
   > 
   > <img src="https://user-images.githubusercontent.com/13265628/148411730-b1c4ab39-2080-457f-9a33-885385cd2275.png" height="200" />
   
-  > 如何新增檔案
+  > 如何新增檔案 (此專案是選擇 `指令碼`)
   >
   > <img src="https://user-images.githubusercontent.com/13265628/148412131-9ed5e454-bc1b-4c8e-85a6-c4d02b32d3be.png" height="200" />
 

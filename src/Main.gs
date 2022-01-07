@@ -77,6 +77,7 @@ function addProcess(params) {
     replyMessage += '- ' + item + '\n';
   }
 }
+
 /**
  * /want 邏輯處理
  */

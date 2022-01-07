@@ -77,14 +77,13 @@ function addProcess(params) {
     replyMessage += '- ' + item + '\n';
   }
 }
-
 /**
  * /want 邏輯處理
  */
 function wantProcess(params) {
   const lock = LockService.getScriptLock();
   const uuid = Utilities.getUuid();
-  log(uuid +' : ' + params);
+  log(uuid + ' : ' + params);
   const who = params[1];
   const items = params.slice(2).filter(function (value, index, array) { return value != '' });
   const sheet = getSheet();
@@ -101,13 +100,26 @@ function wantProcess(params) {
     }
   }
   try {
-    lock.waitLock(30000);
+    lock.waitLock(5000);
     const count = getRowCountOfColumn(0);
     sheet.getRange(count + 2, 1).setValue(uuid);
+    SpreadsheetApp.flush();
     lock.releaseLock();
   } catch (e) {
-    lock.releaseLock();
-    throw e;
+    log('First wait lock exception:\n' + e.stack);
+    Utilities.sleep(1000);
+    // Try again
+    try {
+      lock.waitLock(5000);
+      const count = getRowCountOfColumn(0);
+      sheet.getRange(count + 2, 1).setValue(uuid);
+      SpreadsheetApp.flush();
+      lock.releaseLock();
+    } catch (error) {
+      lock.releaseLock();
+      log('Second wait lock exception:\n' + error.stack);
+      throw error;
+    }
   }
   const rowIndex = sheet.createTextFinder(uuid).findNext().getRowIndex();
   replyMessage = who + '已完成登記以下獎項：\n';

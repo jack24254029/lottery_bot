@@ -1,9 +1,10 @@
-# 安裝教學
+# 架設教學
 
-安裝過程中會使用到以下服務
+架設過程中會使用到以下服務
 - Line Messaging API
 - Google Apps Script
 - Google Sheet API
+- RANDOM.org API
 - Google Cloud Platform (除錯才會使用到)
 
 # 目錄

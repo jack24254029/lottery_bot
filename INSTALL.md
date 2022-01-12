@@ -110,10 +110,10 @@
 
 - 再來就是把 `src` 資料夾底下的程式碼複製過去
 
-  - Configs.gs
-  - Main.gs
-  - SheetUtils.gs
-  - Utils.gs
+  - [Configs.gs](src/Configs.gs)
+  - [Main.gs](src/Main.gs)
+  - [SheetUtils.gs](src/SheetUtils.gs)
+  - [Utils.gs](src/Utils.gs)
 
   > 如何修改檔名 (可以不用打 `.gs`)
   > 

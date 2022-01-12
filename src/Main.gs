@@ -37,6 +37,9 @@ function doPost(e) {
   if (typeof replyToken === 'undefined') {
     return;
   }
+  if (userMessage.startsWith('/') == false) {
+    return;
+  }
   log(e.postData.contents);
   console.log(e.postData.contents);
   if (userMessage.startsWith('/add ')) {

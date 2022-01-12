@@ -88,6 +88,8 @@
 - 開啟共用 -> 知道連結的人都可以進行編輯
 
   > 這個連結也不要隨便給別人，不然他可以直接修改裡面的資料
+
+  > 如果 `沒有開啟編輯` ，機器人會無法寫入資料到 Excel 裡面
   
   <img src="https://user-images.githubusercontent.com/13265628/148416879-0ba33d94-ceb9-4c2b-a704-e002c5704e17.png" width="600" />
 

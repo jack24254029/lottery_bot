@@ -77,7 +77,10 @@
 
 - 新增一個工作表，叫 `Log`
 
+  > 工作表名稱 `大小寫必須一致`
+
   > 這個工作表可以用來記錄一些 Debug 用的資訊，後續會在這邊取得 Line 群組的 ID
+
 - A1 欄位填上 `Timestamp`
 - B1 欄位填上 `Log`
 - 這邊有一個東西非常重要，叫做 `SheetID` ，他就在網址列上面，後續會使用到
@@ -168,6 +171,8 @@
 
 - 開始部署我們的 Apps Scripts，先儲存，再點選右上角的 `部署` -> `新增部署作業`，選取類型旁邊有個齒輪，點開來，勾選 `網頁應用程式`
 
+  > 只有 `第一次` 部屬時才需要新增部署作業，後需的程式碼更動都使用 `管理部屬作業`
+  
   <img src="https://user-images.githubusercontent.com/13265628/148416213-fb8942d1-4cc2-4817-8779-2efeea7e6bc0.png" width="800" />
 
   - 新增說明，可隨意打，我自己是會打這是第幾版，所以我填 1
@@ -198,6 +203,10 @@
 
 - 接著把機器人加到 Line 群組裡面，隨便輸入一句話讓機器人已讀，藉此來取得這個群組的 Group ID
 - 以上步驟如果都正確的話，就會在 Log 的工作表看到 Log 了，裡面就可以找到 `groupId`，並把他填到 `Configs.gs` 裡面的 `TARGET_GROUP_ID`
+
+  > Log 長度很長，記得把欄位拉寬點，才會看到 `groupId`
+  
+  > {"destination":"我拿掉了","events":[{"type":"message","message":{"type":"text","id":"15396773644799","text":"/lottery 火1 2"},"timestamp":1641823424884,"source":{"type":"group",`"groupId":"我拿掉了"`,"userId":"我拿掉了"},"replyToken":"我拿掉了","mode":"active"}]}
   
   <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="800" />
   

@@ -152,7 +152,7 @@ function listProcess() {
   const columnCount = data[0].length;
   replyMessage = '登記狀況\n';
   for (var i = 1; i < columnCount; i++) {
-    replyMessage += '- ' + data[0][i] + '：\n  ';
+    replyMessage += '- ' + data[0][i] + '：\n';
     for (var j = 1; j < data.length; j++) {
       if (data[j][i].toString().length == 0) {
         continue;

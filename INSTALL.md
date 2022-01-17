@@ -211,7 +211,7 @@
 - 以上步驟如果都正確的話，就會在 Log 的工作表看到 Log 了，裡面就可以找到 `groupId`，並把他填到 `Configs.gs` 裡面的 `TARGET_GROUP_ID`
 
   > Log 長度很長，記得把欄位拉寬點，才會看到 `groupId`
-  
+  > 
   > {"destination":"我拿掉了","events":[{"type":"message","message":{"type":"text","id":"15396773644799","text":"/lottery 火1 2"},"timestamp":1641823424884,"source":{"type":"group",`"groupId":"我拿掉了"`,"userId":"我拿掉了"},"replyToken":"我拿掉了","mode":"active"}]}
   
   <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="800" />

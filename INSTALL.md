@@ -64,7 +64,7 @@
 
 # 建立 Google Sheet
 
-這個階段，我們會用自己的 Google Drive 建立一個 Google Sheet ，也就是 Google 的 Excel
+這個階段，我們會用自己的 Google Drive 建立一個 Google Sheet ，也就是大家常說的 Excel (工作表)
 這個 Sheet 是要用來記錄要抽什麼、誰登記要抽什麼，也就是當作一個小型資料庫使用
 
 - 打開 Google Drive
@@ -97,7 +97,7 @@
 
   > 這個連結也不要隨便給別人，不然他可以直接修改裡面的資料
   >
-  > 如果 `沒有開啟編輯` ，機器人會無法寫入資料到 Excel 裡面
+  > 如果 `沒有開啟編輯` ，機器人會無法寫入資料到 Sheet 裡面
   
   <img src="https://user-images.githubusercontent.com/13265628/148416879-0ba33d94-ceb9-4c2b-a704-e002c5704e17.png" width="600" />
 

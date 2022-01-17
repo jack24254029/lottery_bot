@@ -174,7 +174,9 @@
   - `RANDOM_API_KEY` 填上在 RANDOM.org 申請好的 API Key
 
 - 開始部署我們的 Apps Scripts，先儲存，再點選右上角的 `部署` -> `新增部署作業`，選取類型旁邊有個齒輪，點開來，勾選 `網頁應用程式`
-
+  
+  > 專案一定要 `先儲存` 再部署
+  > 
   > 只有 `第一次` 部屬時才需要新增部署作業，後需的程式碼更動都使用 `管理部屬作業`
   
   <img src="https://user-images.githubusercontent.com/13265628/148416213-fb8942d1-4cc2-4817-8779-2efeea7e6bc0.png" width="800" />

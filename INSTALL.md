@@ -78,7 +78,7 @@
 - 新增一個工作表，叫 `Log`
 
   > 工作表名稱 `大小寫必須一致`
-
+  >
   > 這個工作表可以用來記錄一些 Debug 用的資訊，後續會在這邊取得 Line 群組的 ID
 
 - A1 欄位填上 `Timestamp`
@@ -86,13 +86,17 @@
 - 這邊有一個東西非常重要，叫做 `SheetID` ，他就在網址列上面，後續會使用到
 
   > `https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit#gid=0`
+  >
+  > 舉例： https://docs.google.com/spreadsheets/d/1234567890-====qwertyuioasdfghjklzxcvbnm/edit#gid=0
+  > 
+  > `1234567890-====qwertyuioasdfghjklzxcvbnm` 就是 `SheetID`
   
   <img src="https://user-images.githubusercontent.com/13265628/148408332-dcbf6e41-816e-4af6-879b-c03677328e38.png" width="800" />
 
 - 開啟共用 -> 知道連結的人都可以進行編輯
 
   > 這個連結也不要隨便給別人，不然他可以直接修改裡面的資料
-
+  >
   > 如果 `沒有開啟編輯` ，機器人會無法寫入資料到 Excel 裡面
   
   <img src="https://user-images.githubusercontent.com/13265628/148416879-0ba33d94-ceb9-4c2b-a704-e002c5704e17.png" width="600" />
@@ -228,10 +232,10 @@
 
 - 當遇到機器人沒反應時，請檢查以下步驟
 
-  - 確認 Google Excel 的連結沒有改成 `知道連結者可以編輯`
+  - 確認 Google Sheet 的連結沒有改成 `知道連結者可以編輯`
   - 確認 `Sheet ID` 是否填錯
   - 確認 `Configs.gs` 裡面的參數都設定正確
-  - 確認 Google Excel `Log` 工作表名稱大小寫一致 
+  - 確認 Google Sheet `Log` 工作表名稱大小寫一致 
   - 管理部屬作業的時候，有建立新版本嗎?
 
 - 當機器人原本可以使用，突然不能用了，怎麼辦？

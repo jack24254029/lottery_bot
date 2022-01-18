@@ -75,11 +75,13 @@
   
   > 你可以為試算表命名，避免之後清理 Google Drive 的時候誤刪
 
-- 新增一個工作表，叫 `Log`
+- 新增一個工作表，叫 `Log` (不是檔案名稱，是下方的工作表)
 
   > 工作表名稱 `大小寫必須一致`
   >
   > 這個工作表可以用來記錄一些 Debug 用的資訊，後續會在這邊取得 Line 群組的 ID
+
+  <img src="https://user-images.githubusercontent.com/13265628/149971357-61300782-8521-4f1b-838d-73ce654358c4.png" />
 
 - A1 欄位填上 `Timestamp`
 - B1 欄位填上 `Log`

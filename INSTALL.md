@@ -212,12 +212,22 @@
 - 接著把機器人加到 Line 群組裡面，隨便輸入一句話讓機器人已讀，藉此來取得這個群組的 Group ID
 - 以上步驟如果都正確的話，就會在 Log 的工作表看到 Log 了，裡面就可以找到 `groupId`，並把他填到 `Configs.gs` 裡面的 `TARGET_GROUP_ID`
 
-  > Log 長度很長，記得把欄位拉寬點，才會看到 `groupId`
-  > 
-  > {"destination":"我拿掉了","events":[{"type":"message","message":{"type":"text","id":"15396773644799","text":"/lottery 火1 2"},"timestamp":1641823424884,"source":{"type":"group",`"groupId":"我拿掉了"`,"userId":"我拿掉了"},"replyToken":"我拿掉了","mode":"active"}]}
+  > Log 很長不方便查看，可以使用 https://jsoneditoronline.org/beta/ 這個網站來幫著你看
   
-  <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="800" />
+  - 把下圖的 Log 複製起來，貼到 https://jsoneditoronline.org/beta/
   
+    <img src="https://user-images.githubusercontent.com/13265628/148421559-9f5084cf-71ad-4372-9456-74202b7ded8a.png" width="800" />
+    
+    <img src="https://user-images.githubusercontent.com/13265628/150080524-bf3a468f-5b6b-47ac-b03c-f703c216dfc0.png" width="800" />
+    
+  - 貼上後，把左上角的 `</>` 符號按掉並且展開，就可以找到 `Group ID` 了 (紅圈處)
+  
+    <img src="https://user-images.githubusercontent.com/13265628/150080720-b90565e6-c041-4cb4-9854-d9ffa9fb1f73.png" height="200" />
+    
+    <img src="https://user-images.githubusercontent.com/13265628/150080867-fef72965-cf18-4514-b9ec-78ec64082dd9.png" height="200" />
+    
+    <img src="https://user-images.githubusercontent.com/13265628/150081011-9661a21e-0525-40ff-81d2-69030e65299e.png" />
+
 - 完成之後，再去 `Main.gs` 把第 21 行刪掉
 
   > 也可以不刪，但是任何人在群組所說的話都會變成 Log 儲存在試算表，請自行斟酌

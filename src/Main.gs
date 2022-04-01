@@ -138,7 +138,7 @@ function wantProcess(params) {
   find = sheet.createTextFinder(who).findAll();
   for (var i = 0; i < find.length; i++) {
     const target = find[i];
-    if (target.getRowIndex() != rowIndex) {
+    if (target.getRowIndex() != rowIndex && target.getValue() == who) {
       target.setValue('');
     }
   }

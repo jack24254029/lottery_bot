@@ -98,7 +98,7 @@ function wantProcess(params) {
   var find = sheet.createTextFinder(who).findAll();
   for (var i = 0; i < find.length; i++) {
     const target = find[i];
-    if (target.getRowIndex() == 1) {
+    if (target.getRowIndex() == 1 && target.getValue() == who) {
       replyMessage = '請檢查有沒有輸入名字';
       return;
     }

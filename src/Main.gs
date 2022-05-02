@@ -183,6 +183,7 @@ function lotteryProcess(params) {
   }
   const columnIndex = getColumnIndex(item);
   var list = getListOfColumn(columnIndex); // raw data
+  let randomNumbers = getRandomNumbers(count);
   replyMessage = '！！恭喜！！\n';
   replyMessage += item + '得獎者：\n';
   log('原名單:' + list);
@@ -195,7 +196,7 @@ function lotteryProcess(params) {
     shuffle(list);
     log('Round ' + (i + 1) + ' 亂數名單 ' + list);
     console.log('Round ' + (i + 1) + ' 亂數名單 ' + list);
-    const seed = randomNumber();
+    const seed = randomNumbers[i];
     const index = seed % list.length;
     log('亂數 index = ' + seed + '/' + list.length + ' 取餘數 = ' + index);
     console.log('亂數 index = ' + seed + '/' + list.length + ' 取餘數 = ' + index);
@@ -204,7 +205,6 @@ function lotteryProcess(params) {
     console.log('Round ' + (i + 1) + ' 中籤者：' + who);
     replyMessage += '- ' + who + '\n';
     list = list.filter(function (value, index, array) { return value != who });
-  }
 }
 
 /**

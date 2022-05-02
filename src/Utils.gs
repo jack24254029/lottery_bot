@@ -1,9 +1,12 @@
 /**
- * 透過 random 產出隨機一個數字
+ * 透過 random 產出隨機 N 個數字
  * Ref: https://api.random.org/json-rpc/4/basic
  */
-function randomNumber() {
-  const response = UrlFetchApp.fetch('https://api.random.org/json-rpc/4/invoke', {
+function getRandomNumbers(round) {
+  var requests = [];
+  var numbers = [];
+  const request = {
+    'url': 'https://api.random.org/json-rpc/4/invoke',
     'headers': {
       'Content-Type': 'application/json; charset=UTF-8'
     },
@@ -19,10 +22,19 @@ function randomNumber() {
         'replacement': false
       },
       'id': 42
-    }),
-  });
-  const result = JSON.parse(response.getContentText());
-  return result.result.random.data[0];
+
+    })
+  };
+  for (var i = 0; i < round; i++) {
+    requests.push(request);
+  }
+  let responses = UrlFetchApp.fetchAll(requests);
+  for (var i = 0; i < round; i++) {
+    let response = responses[i];
+    let result = JSON.parse(response.getContentText());
+    numbers.push(result.result.random.data[0]);
+  }
+  return numbers;
 }
 
 /**

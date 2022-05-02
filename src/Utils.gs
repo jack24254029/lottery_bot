@@ -22,7 +22,6 @@ function getRandomNumbers(round) {
         'replacement': false
       },
       'id': 42
-
     })
   };
   for (var i = 0; i < round; i++) {

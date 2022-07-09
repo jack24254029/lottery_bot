@@ -1,5 +1,4 @@
 const replayUrl = 'https://api.line.me/v2/bot/message/reply';
-var replyMessage = '';
 
 /**
  * 主程式進入點

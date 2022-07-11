@@ -42,23 +42,43 @@ function doPost(e) {
   }
   log(e.postData.contents);
   console.log(e.postData.contents);
-  if (userMessage.startsWith('/add ')) {
-    const params = userMessage.split(' ');
-    addProcess(params);
-  } else if (userMessage.startsWith('/want ')) {
-    const params = userMessage.split(' ');
-    try {
-      wantProcess(params);
-    } catch (e) {
-      log(e.stack);
+  let map = new Map([
+    [1, "/add"],
+    [2, "/want"], 
+    [3, "/list"],
+    [4, "/lottery"],
+    [5, "/help"]
+    ]);
+  for (let value of map.values()) if (userMessage.startsWith(value)){
+    switch (value) {
+	case "/add": {
+    	  const params = userMessage.split(' ');
+          addProcess(params);
+	  break
+	}
+	case "/want": {
+   	 const params = userMessage.split(' ');
+  	  try {
+  	    wantProcess(params);
+  	  } catch (e) {
+  	    log(e.stack);
+  	  }
+	  break
+	}
+	case "/list": {
+    	  listProcess();
+	  break
+	}
+	case "/lottery": {
+          const params = userMessage.split(' ');
+          lotteryProcess(params);
+	  break
+	}
+	case "/help": {
+    	  helpProcess();
+	  break
+	}
     }
-  } else if (userMessage.startsWith('/list')) {
-    listProcess();
-  } else if (userMessage.startsWith('/lottery ')) {
-    const params = userMessage.split(' ');
-    lotteryProcess(params);
-  } else if (userMessage.startsWith('/help')) {
-    helpProcess();
   }
   if (replyMessage.length === 0) {
     return;

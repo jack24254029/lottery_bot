@@ -1,11 +1,12 @@
 const sheetName = Utilities.formatDate(new Date(), 'GMT+8', "yyyy/MM/dd");
+const activeSheetApp = SpreadsheetApp.openById(SHEET_ID);
 
 function getSheetName() {
   return sheetName;
 }
 
 function getSheet() {
-  return SpreadsheetApp.openById(SHEET_ID).getSheetByName(getSheetName());
+  return activeSheetApp.getSheetByName(getSheetName());
 }
 
 function getDataRangeValues() {
@@ -87,8 +88,11 @@ function getListOfColumn(columnIndex) {
 function createSheet() {
   const sheet = getSheet();
   if (sheet != null) {
-    SpreadsheetApp.openById(SHEET_ID).deleteSheet(sheet);
+    let range = sheet.getDataRange();
+    range.clearContent();
+    range.clearFormat();
+    return;
   }
-  const newSheet = SpreadsheetApp.openById(SHEET_ID).insertSheet();
+  const newSheet = activeSheetApp.openById(SHEET_ID).insertSheet();
   newSheet.setName(sheetName);
 }

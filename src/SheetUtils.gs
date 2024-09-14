@@ -93,6 +93,6 @@ function createSheet() {
     range.clearFormat();
     return;
   }
-  const newSheet = activeSheetApp.openById(SHEET_ID).insertSheet();
+  const newSheet = activeSheetApp.insertSheet();
   newSheet.setName(sheetName);
 }
